@@ -41,6 +41,16 @@
         </el-main>
       </el-container>
     </el-container>
+    
+    <el-carousel :interval="2000" type="card" height="1000px">
+            <el-carousel-item v-for="item in carouseData" :key="item">
+            
+            <!-- < img :src="item.url" alt="" / -->
+            <img :src="item.url" alt="" />
+        </el-carousel-item>
+          </el-carousel>
+
+
   </div>
 
 </template>
@@ -56,6 +66,14 @@
       this.activeInedx = this.$route.path
     }
   }
+  const carouseData = [
+    { url: "../imgs/1.png" },
+    { url: "../imgs/2.png" },
+    { url: "../imgs/3.png" },
+    { url: "../imgs/4.png" },
+    { url: "../imgs/5.png" },
+    { url: "../imgs/6.png" },
+  ]
 </script>
 
 <style lang="scss" scoped>

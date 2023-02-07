@@ -7,7 +7,7 @@
     <el-step title="Step 4" :icon="Picture" />
   </el-steps>
 
-  <el-button @click="next">预定</el-button>
+  <el-button><router-link to="booking1">预定</router-link></el-button>
 </template>
 
 <script setup>
