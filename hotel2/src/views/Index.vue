@@ -3,21 +3,19 @@
     <el-container>
       <el-header>
         <h2>酒店管理平台</h2>
-        <div class="zc">
-            <h2>注册</h2>
-        </div>
         <div>
-            <h2>登录</h2>
+            <el-button>注册</el-button>
+            <el-button>登录</el-button>
         </div>
+        
       </el-header>
-      <el-container>
+      <el-container class="nav">
         <el-aside width="200px">
             <el-menu
         :default-active="activeInedx"
         class="el-menu-vertical-demo"
         backgroud-color="#666"
-        router
-        
+        router  
       >
       <el-menu-item index="/">
           <el-icon><setting /></el-icon>
@@ -39,7 +37,6 @@
       </el-menu>
         </el-aside>
         <el-main>
-            main
             <RouterView />
         </el-main>
       </el-container>
@@ -84,5 +81,12 @@
 }
 .el-menu{
     background: #000;
+}
+.nav{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.el-main{
+  background: #ccc0b0;
 }
 </style>

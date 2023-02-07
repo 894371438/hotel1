@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <div>
+    <div clsss="bg">
+        <div class="title">
             <h2>酒店介绍</h2>
         </div>
-        <div>
+        <div class="neirong">
             吉安国际酒店是集餐饮、旅业、会议、休闲娱乐为一体的吉安唯一涉外综合型商务酒店，酒店位于吉安县城庐陵大道庐陵
             广场旁，占地面积4.5万㎡，楼高54米，与庐陵文化广场、庐陵生态公园、国家4A级景点天祥公园毗邻，步行街、井冈山国
             家开发区仅需三分钟，距国家5A景区井冈山也仅需1小时，是您商务洽谈、旅游观光及居家休闲的梦幻天堂。酒店功能完善
@@ -20,10 +20,24 @@
     </div>
 </template>
 
-<script setup>
+<script>
 
 </script>
 
-<style scoped>
+<style>
+.title{
+    width: 100%;
+    height: 60px;
+    margin-left: 43%;
+    margin-top: 5%;
+
+}
+.neirong{
+    background: #88cdea;
+    width: 80%;
+    margin: auto;
+    font-weight: 900;
+    font-size: 18.3px;
+}
 
 </style>
