@@ -3,9 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 const Login = () => import('../views/Login.vue')
 const Index = () => import('../views/Index.vue')
 const Home = () => import('../views/Index/Home.vue')
-const ShopSetting = () => import('../views/Index/info.vue')
-const ShopFood = () => import('../views/Index/Introduction.vue')
-const OrderList = () => import('../views/Index/Order.vue')
+const Info = () => import('../views/Index/info.vue')
+const Introduction = () => import('../views/Index/Introduction.vue')
+const Order = () => import('../views/Index/Order.vue')
 const Roomservice= () => import('../views/Index/Roomservice.vue')
 
 
@@ -16,42 +16,31 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: Index,
-      redirect: '/home',
-      meta: {
-        auth: true
-      },
       children:[
         {
           path: 'home',
           name: 'home',
           component: Home,
-          meta: {
-            breadcrumb: ['首页']
-          }
         },
         {
-          path: 'shop/setting',
-          name: 'shopsetting',
-          component: ShopSetting,
-          meta: {
-            breadcrumb: ['店铺管理','店铺设置']
-          }
+          path: 'info',
+          name: 'info',
+          component: Info,
         },
         {
-          path: 'shop/food',
-          name: 'shopfood',
-          component: ShopFood,
-          meta: {
-            breadcrumb: ['店铺管理','菜品设置']
-          }
+          path: 'introduction',
+          name: 'introduction',
+          component: Introduction,
         },
         {
-          path: 'order/list',
-          name: 'orderlist',
-          component: OrderList,
-          meta: {
-            breadcrumb: ['订单管理','订单列表 ']
-          }
+          path: 'order',
+          name: 'order',
+          component: Order,
+        },
+        {
+          path: 'roomservice',
+          name: 'roomservice',
+          component: Roomservice,
         }
       ]
     },
@@ -59,11 +48,9 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login,
-      meta: {
-        auth: false
-      },
     },
   ]
 })
 
 export default router
+
