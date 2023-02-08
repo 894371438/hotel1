@@ -1,14 +1,27 @@
 <template>
-    <div>
-        <tab-bar :active="3"></tab-bar>
 
-    </div>
-</template>
-
-<script setup>
-
-//import TabBar from '../../components/TabBar.vue'
-</script>
-<style scoped>
-
-</style>
+    <el-steps :active="3">
+        <el-step title="Step 1" :icon="Edit" />
+        <el-step title="Step 2" :icon="Upload" />
+        <el-step title="Step 3" :icon="Picture" />
+        <el-step title="Step 4" :icon="Picture" />
+      </el-steps>
+    
+      <el-button @click="next">预定</el-button>
+    </template>
+    
+    <script setup>
+    import { useRouter } from "vue-router";
+    const router=useRouter()
+    const next=()=>{
+    router.push('/booking3')
+    }
+    
+    </script>
+    
+    <style lang="scss" scoped>
+    .el-button{
+  margin-left:90%;
+  margin-top: 10%;
+}
+    </style>
