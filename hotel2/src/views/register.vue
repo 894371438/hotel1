@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>login</h2>
+        <h2>register</h2>
     </div>
 </template>
 

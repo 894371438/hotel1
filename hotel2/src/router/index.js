@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const Login = () => import('../views/Login.vue')
 const Index = () => import('../views/Index.vue')
+const Register = () => import('../views/Register.vue')
 const Home = () => import('../views/Index/Home.vue')
 const Info = () => import('../views/Index/info.vue')
 const Introduction = () => import('../views/Index/Introduction.vue')
@@ -72,6 +73,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login,
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
     },
   ]
 })
