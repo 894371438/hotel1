@@ -6,9 +6,22 @@ const state = {
 
 }
 const actions = {
-  yzm(data){
-    return http.get('/api/login_code', data)
+  yzm(context, data) {
+      return http.get('/send_code', data)
+  },
+  enroll(context, data) {
+      return http.post('/rgeister_post', data)
+  },
+  login(context, data){
+      return http.post('/login_code', data)
+  },
+  loginpwd(context, data){
+      return http.post('/login_pwd', data)
+  },
+  info(context, data){
+      return http.get('/token', data)
   }
+
 }
 const getters = {}
 const mutations = {

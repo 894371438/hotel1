@@ -21,7 +21,7 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: Index,
-
+      /* redirect:Roomservice, */
       children:[
         {
           path: 'home',

@@ -11,35 +11,46 @@
   
     <div class="demo-date-picker">
       <div class="block">
-        <span class="demonstration">日期</span>
+        <span class="demonstration">Default</span>
         <el-date-picker
           v-model="value1"
           type="daterange"
           range-separator="To"
           start-placeholder="Start date"
           end-placeholder="End date"
-          :size="size"
+          
         />
       </div>
   
       </div>
-      <router-link to="Booking1?price='+item.price'"><el-button @click="next">预定</el-button></router-link>
-    
+  <!-- <router-link :to="'booking1?price='+price"> <el-button @click="next">预定</el-button></router-link> -->
+    <el-button @click="toLink(next)">预定</el-button> 
   </template>
   
   <script setup>
-  import { useRouter } from "vue-router";
+   import { useRouter } from "vue-router";
+   import { useRoute } from "vue-router";
   import { ref } from 'vue'
   const router=useRouter()
-  const next=()=>{
-  router.push('/booking1')
+  const route=useRoute()
+  
+  const toLink = ()=>{//传数据
+    router.push(`/booking1`)
   }
   
+  
+  
+  // const next=()=>{
+  // router.push('/booking1');
+  // }
+  //console.log(route)
+  
+  // 动态传参（/）接收用params，现在不是用动态传参所以我们用query
+  const price=ref(route)
+  
+  
   // 日期
-  
   const value1 = ref('')
-  
-  
   const shortcuts = [
     {
       text: 'Last week',
@@ -86,7 +97,6 @@
     text-align: center;
     border-right: solid 1px var(--el-border-color);
     flex: 1;
-    font-weight:bolder ;
   }
   
   .demo-date-picker .block:last-child {
@@ -102,8 +112,4 @@
   .el-button{
     margin-left:90%;
   }
-.demonstration{
-  font-weight: bold;
-
-}
   </style>
