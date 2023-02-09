@@ -33,7 +33,6 @@
 
 }
 .neirong{
-    background: #88cdea;
     width: 80%;
     margin: auto;
     font-weight: 900;

@@ -23,8 +23,8 @@
       </div>
   
       </div>
-  
-    <el-button @click="next">预定</el-button>
+      <router-link to="Booking1?price='+item.price'"><el-button @click="next">预定</el-button></router-link>
+    
   </template>
   
   <script setup>

@@ -21,6 +21,7 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: Index,
+
       children:[
         {
           path: 'home',
