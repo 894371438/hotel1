@@ -12,7 +12,8 @@ const state={
      ],
       price: 0,    
       label:'',
-      src:''
+      src:'',
+      all: 0,
   }
  }
  const mutations={
@@ -20,6 +21,7 @@ const state={
          state.message.price=payload.price
          state.message.label=payload.label
          state.message.src=payload.src
+         state.message.all=payload.all
      }
  }
  export default{

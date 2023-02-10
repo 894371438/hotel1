@@ -10,8 +10,8 @@
         <h3>价格：￥{{ item.price }}
              <!-- <router-link :to="'Bookingroom?price='+item.price">我要预定</router-link>  -->
              <!-- <router-link :to="{name:'bookingroom',params:{price:item.price}}">我要预定</router-link>  -->
-         <el-button>
-            <div @click="toLink(item.price,item.label,item.src)">
+         <el-button @click="toLink( item.price,item.label,item.src)">
+            <div>
               我要预定
             </div>
           </el-button>
@@ -44,6 +44,8 @@ router.push(`/bookingroom`)
 
 const activeName=ref('first');
 const router = useRouter();
+
+
 </script>
 
 <style scoped>
@@ -55,18 +57,22 @@ const router = useRouter();
 }
 .el-button{
     width: 150px;
-    height: 26px;
-
+    height: 50px;
+    background: orangered;
+    color: brown;
 }
 .el-tab-pane{
   margin-top: 20px;
-
+  text-align: center;
 }
 .pic{
-  width: 80%;
+  width: 90%;
   height: 450px;
 }
 .router-link-active{
   background-color: red;
+}
+.el-tabs{
+  text-align: center;
 }
 </style>

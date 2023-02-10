@@ -1,19 +1,19 @@
 <template>
 
   <el-steps :active="3">
-      <el-step title="Step 1" />
-      <el-step title="Step 2" />
-      <el-step title="Step 3" />
-      <el-step title="Step 4" />
+    <el-step title="预定信息"  />
+    <el-step title="选择房间"  />
+    <el-step title="订单及宾客信息"  />
+    <el-step title="完成"  />
   </el-steps>
 
   <el-form :inline="true" :model="formInline" id="up">
   <h2>订房信息</h2>
   <el-form-item label="到店日期">
-    <el-input v-model="formInline.user" placeholder="" />
+    <el-input v-model="formInline.user"  />
   </el-form-item>
   <el-form-item label="离店日期">
-    <el-input v-model="formInline.user" placeholder="" />
+    <el-input v-model="formInline.user"  />
   </el-form-item>
   <p>预定保留到当天18:00，如需保留更长时间，请致电酒店客服。</p>
   <el-form-item :label="'房型:'+next2 ">
@@ -21,13 +21,13 @@
     <el-input v-model="formInline.user" :placeholder="next2" />
   </el-form-item>
   <el-form-item label="间数">
-    <el-input v-model="formInline.user" placeholder="" />
+    <el-input v-model="formInline.user" />
   </el-form-item>
   <el-form-item label="房价￥：">
     <el-input v-model="formInline.user" :placeholder='next1' />
   </el-form-item>
   <el-form-item label="总价￥：">
-    <el-input v-model="formInline.user" placeholder="" />
+    <el-input v-model="formInline.user" :placeholder="next3" />
   </el-form-item>
   <p>其他需求：</p>
   <el-form-item id="txt">
@@ -59,6 +59,9 @@
   const store=useStore()
   const next1 = computed(()=>store.state.info.message.price)
   const next2 = computed(()=>store.state.info.message.label)
+  const next3 = computed(()=>store.state.info.message.all)
+  
+  
 
 
   const router=useRouter()

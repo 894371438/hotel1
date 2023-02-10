@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import { ElMessage } from 'element-plus'
 export default {
     data() {
         return {
@@ -62,6 +63,14 @@ export default {
                 } else {
                     console.log('error submit!', fields)
                 }
+                if(this.form === undefined || this.form === ''){
+
+                    ElMessage.success('登录成功')
+                    return
+                }
+                else{
+                    ElMessage.success('修改成功')
+                }
             })
         }
 
@@ -77,6 +86,6 @@ export default {
 
 .el-form-item {
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 </style>

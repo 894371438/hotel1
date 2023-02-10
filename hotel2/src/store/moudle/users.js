@@ -25,9 +25,6 @@ const actions = {
 }
 const getters = {}
 const mutations = {
-  updateyzm(state,payload){
-    state.yzmj = payload
-  }
 }
 
 export default {

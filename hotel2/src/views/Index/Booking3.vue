@@ -1,13 +1,13 @@
 <template>
 
   <el-steps :active="4">
-    <el-step title="Step 1" :icon="Edit" />
-    <el-step title="Step 2" :icon="Upload" />
-    <el-step title="Step 3" :icon="Picture" />
-    <el-step title="Step 4" :icon="Picture" />
+    <el-step title="预定信息" />
+    <el-step title="选择房间" />
+    <el-step title="订单及宾客信息" />
+    <el-step title="完成" />
   </el-steps>
 
-  <el-button @click="next">预定</el-button>
+  <el-button > <router-link :to="'Order'">预定</router-link> </el-button>
   <div class="text">预定成功</div>
 </template>
 
@@ -22,7 +22,8 @@
   margin-top: 10%;
 
 }
-.text{
+
+.text {
   text-align: center;
   font-size: 50px;
   font-weight: bolder;

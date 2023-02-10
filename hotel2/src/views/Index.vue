@@ -1,5 +1,5 @@
 <template>
-  <div class="common-layout">
+ <div class="common-layout">
     <el-container>
       <el-header>
         <h2>酒店管理系统</h2>
@@ -53,6 +53,9 @@
 
             <el-menu-item index="/order">
               <span>我的订单</span>
+            </el-menu-item>
+            <el-menu-item index="/roomservice">
+              <span>酒店图片</span>
             </el-menu-item>
           </el-menu>
         </el-aside>
@@ -198,11 +201,12 @@
       </el-container>
     </el-container>
   </div>
+  
 </template>
 
 <script>
 import { ElMessage } from "element-plus";
-import { ref } from "vue";
+//import { ref } from "vue";
 export default {
   data() {
     return {

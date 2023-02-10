@@ -14,6 +14,7 @@ const Booking2= () => import('../views/Index/Booking2.vue')
 const Booking3= () => import('../views/Index/Booking3.vue')
 
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -67,7 +68,7 @@ const router = createRouter({
           path: 'booking3',
           name: 'booking3',
           component: Booking3,
-        }
+        },
       ]
     },
     {

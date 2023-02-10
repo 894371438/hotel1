@@ -39,10 +39,14 @@
       };
     },
     mounted() {
-      this.getData();
+      /* this.getData(); */
+      this.$store.dispatch('order/detailList').then(()=>{
+        console.log(this.$store.state.order.list)
+        this.tableData = this.$store.state.order.list
+      })
     },
     methods: {
-      getData() {
+    /*   getData() {
         //table总数据
         const DataAll = [
           {
@@ -116,7 +120,7 @@
           this.tableData.push(DataAll[i]);
         }
         this.query.total = DataAll.length;
-      },
+      }, */
       handleSizeChange(val) {
         console.log(`每页 ${val} 条`);
         this.query.pageSize=val

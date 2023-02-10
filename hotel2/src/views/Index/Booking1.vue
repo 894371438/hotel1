@@ -2,10 +2,10 @@
 <template>
 
     <el-steps :active="2">
-        <el-step title="Step 1" :icon="Edit" />
-        <el-step title="Step 2" :icon="Upload" />
-        <el-step title="Step 3" :icon="Picture" />
-        <el-step title="Step 4" :icon="Picture" />
+        <el-step title="预定信息"  />
+        <el-step title="选择房间"  />
+        <el-step title="订单及宾客信息"  />
+        <el-step title="完成"  />
       </el-steps>
        
 <div class="card">
@@ -24,20 +24,22 @@
     <h2>价格:￥{{p}}</h2>
   </div>
   <!-- 选项 -->
-  <p>预定数量</p>
-  <el-select v-model="value" placeholder="1"  class="change2">
+  <p>预定数量 {{ r }}</p>
+  <el-select v-model="values" placeholder="1"  class="change2">
     <el-option
       v-for="item in options"
       :key="item.value"
       :label="item.label"
-      :value="item.value"
+      :value="item.label"
       :disabled="item.disabled"
       class="change1"
     />
   </el-select>
 
   <div>
-    <h2>总价：￥</h2>
+ <!--    <h2>总价：￥{{ p * values }}</h2> -->
+    <h2>总价 {{ all }}</h2>
+
   </div>
       <el-popover
        placement="top-start"
@@ -65,25 +67,28 @@
     const p = computed(()=>store.state.info.message.price)
     const t = computed(()=>store.state.info.message.label)
     const pic = computed(()=>store.state.info.message.src)
-
-    // const l=computed(()=>store.state.info.label)
+    const all = computed(()=>store.state.info.message.price * values.value)
    
+    
+    // const l=computed(()=>store.state.info.label)
+    
     const toLink = ()=>{//传数据
       router.push(`/booking2`)
+      store.commit('info/setprice',{all: all.value,price:p.value,label:t.value})
     }
-
+    
     const router=useRouter()
     const route=useRoute()
     // const next=()=>{
-    // router.push('/booking2')
-    // }
-    
-    const price=ref(route.query.price)
+      // router.push('/booking2')
+      // }
+      
+      const price=ref(route.query.price)
     const msg=ref(price)
-
+    
     const label=ref(route.query.label)
     // 选项
-    const value = ref('')
+    const values = ref('1')
 const options = [
   {
     value: 'Option1',
@@ -117,8 +122,8 @@ const state = reactive({
 const { fits, url } = toRefs(state)
     </script>
 
-    <style lang="scss" scoped>
-    h2{margin-left: 40px;margin-right: 40px;}
+<style lang="scss" scoped>
+h2{margin-left: 40px;margin-right: 40px;}
     .card{
       display: flex;
       flex-direction: row;
@@ -127,7 +132,8 @@ const { fits, url } = toRefs(state)
       margin-left:10%;
       margin-top: 10%;
       height: 200px;
-}
+    }
+
 // 选项
 .change1{
   width: 60px;
