@@ -1,14 +1,12 @@
 <template>
- <div class="common-layout">
+  <div class="common-layout">
     <el-container>
       <el-header>
         <h2>酒店管理系统</h2>
 
         <div class="user2" v-if="show">
           <el-space>
-            <el-avatar
-              src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-            />
+            <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
             <el-dropdown>
               <span class="el-dropdown-link">
                 欢迎：{{ username }}
@@ -18,9 +16,7 @@
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item @click="handleToLogout"
-                    >退出登录</el-dropdown-item
-                  >
+                  <el-dropdown-item @click="handleToLogout">退出登录</el-dropdown-item>
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
@@ -35,14 +31,8 @@
       </el-header>
       <el-container>
         <el-aside width="200px">
-          <el-menu
-            active-text-color="skyblue"
-            background-color="#272727"
-            class="el-menu-vertical-demo"
-            text-color="#fff"
-            :default-active="activeIndex"
-            router
-          >
+          <el-menu active-text-color="skyblue" background-color="#272727" class="el-menu-vertical-demo"
+            text-color="#fff" :default-active="activeIndex" router>
             <el-menu-item index="/"><span>首页</span> </el-menu-item>
             <el-menu-item index="/home"> <span>酒店介绍</span> </el-menu-item>
             <el-menu-item index="/info"><span>客房服务</span> </el-menu-item>
@@ -70,17 +60,10 @@
           <el-dialog v-model="dialogVisiblelogin" width="400px">
             <el-tabs class="demo-tabs">
               <el-tab-pane label="验证码登录" name="first">
-                <el-form
-                  :model="form1"
-                  label-width="70px"
-                  ref="ruleFormRef"
-                  :rules="rules2"
-                  status-icon
-                  ><!-- :model证明form是响应式数据 ，ref为原生dom-->
+                <el-form :model="form1" label-width="70px" ref="ruleFormRef" :rules="rules2"
+                  status-icon><!-- :model证明form是响应式数据 ，ref为原生dom-->
                   <el-form-item label="手机号" prop="phone">
-                    <el-input
-                      v-model="form1.phone"
-                    /><!-- 名字与后端保持一致 -->
+                    <el-input v-model="form1.phone" /><!-- 名字与后端保持一致 -->
                   </el-form-item>
                   <!-- 使用el布局分栏  24格-->
                   <el-form-item label="验证码" prop="code">
@@ -97,39 +80,22 @@
                     </el-row>
                   </el-form-item>
                   <el-form-item>
-                    <el-button
-                      type="primary"
-                      @click="onSubmit($refs.ruleFormRef)"
-                      class="dl"
-                      >登陆</el-button
-                    >
+                    <el-button type="primary" @click="onSubmit($refs.ruleFormRef)" class="dl">登陆</el-button>
                   </el-form-item>
                 </el-form>
               </el-tab-pane>
               <el-tab-pane label="密码登录" name="second">
-                <el-form
-                  :model="form2"
-                  label-width="70px"
-                  ref="ruleFormRef"
-                  :rules="rulse3"
-                  status-icon
-                  ><!-- :model证明form是响应式数据 ，ref为原生dom-->
+                <el-form :model="form2" label-width="70px" ref="ruleFormRef" :rules="rulse3"
+                  status-icon><!-- :model证明form是响应式数据 ，ref为原生dom-->
                   <el-form-item label="手机号" prop="userNmae">
-                    <el-input
-                      v-model="form2.userNmae"
-                    /><!-- 名字与后端保持一致 -->
+                    <el-input v-model="form2.userNmae" /><!-- 名字与后端保持一致 -->
                   </el-form-item>
                   <el-form-item label="密码" prop="pwd">
-                    <el-input v-model="form2.pwd" /><!-- 名字与后端保持一致 -->
+                    <el-input show-password v-model="form2.pwd" /><!-- 名字与后端保持一致 -->
                   </el-form-item>
 
                   <el-form-item>
-                    <el-button
-                      type="primary"
-                      @click="onSubmitzh($refs.ruleFormRef)"
-                      class="dl"
-                      >登陆</el-button
-                    >
+                    <el-button type="primary" @click="onSubmitzh($refs.ruleFormRef)" class="dl">登陆</el-button>
                   </el-form-item>
                 </el-form>
               </el-tab-pane>
@@ -137,46 +103,25 @@
           </el-dialog>
 
           <el-dialog v-model="dialogVisible" title="用户注册" width="500">
-            <el-form
-              :model="form"
-              label-width="0px"
-              ref="ruleFormRef"
-              :rules="rules"
-              status-icon
-            >
+            <el-form :model="form" label-width="0px" ref="ruleFormRef" :rules="rules" status-icon>
               <el-form-item prop="userPhone">
-                <el-input
-                  v-model="form.userPhone"
-                  placeholder="请输入您的手机号"
-                /><!-- 名字与后端保持一致 -->
+                <el-input v-model="form.userPhone" placeholder="请输入您的手机号" /><!-- 名字与后端保持一致 -->
               </el-form-item>
               <el-form-item prop="userName">
-                <el-input
-                  v-model="form.userName"
-                  placeholder="请输入您的姓名"
-                /><!-- 名字与后端保持一致 -->
+                <el-input v-model="form.userName" placeholder="请输入您的姓名" /><!-- 名字与后端保持一致 -->
               </el-form-item>
               <el-form-item prop="userAge">
-                <el-input
-                  v-model="form.userAge"
-                  placeholder="请输入年龄"
-                /><!-- 名字与后端保持一致 -->
+                <el-input v-model="form.userAge" placeholder="请输入年龄" /><!-- 名字与后端保持一致 -->
               </el-form-item>
               <el-form-item prop="userPsw">
-                <el-input
-                  v-model="form.userPsw"
-                  placeholder="请输入密码"
-                /><!-- 名字与后端保持一致 -->
+                <el-input show-password v-model="form.userPsw" placeholder="请输入密码" /><!-- 名字与后端保持一致 -->
               </el-form-item>
               <el-form-item prop="userPsw2">
-                <el-input
-                  v-model="form.userPsw2"
-                  placeholder="再一次输入密码验证"
-                /><!-- 名字与后端保持一致 -->
+                <el-input show-password v-model="form.userPsw2" placeholder="再一次输入密码验证" /><!-- 名字与后端保持一致 -->
               </el-form-item>
               <div class="mb-2 flex items-center text-sm">
                 <el-form :model="form">
-                  <el-form-item >
+                  <el-form-item>
                     <el-radio-group v-model="form.userSex">
                       <el-radio label="男" />
                       <el-radio label="女" />
@@ -201,7 +146,7 @@
       </el-container>
     </el-container>
   </div>
-  
+
 </template>
 
 <script>
@@ -462,17 +407,21 @@ export default {
 .el-row {
   width: 100%;
 }
+
 .el-button {
   width: 100%;
   border: 0;
 }
+
 .yzm {
   width: calc(100% - 20px);
 }
+
 .el-space .el-button {
   background-color: black;
   margin: 0;
 }
+
 .dl {
   width: 70%;
 }

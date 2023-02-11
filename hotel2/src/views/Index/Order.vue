@@ -141,6 +141,7 @@
   }
   .el-pagination {
     margin-top: 15px;
+    margin-left: 365px;
   }
   .el-card{margin-top: 20px;}
   
